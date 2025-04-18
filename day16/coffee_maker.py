@@ -1,5 +1,5 @@
 from prettytable import PrettyTable
-# use pretty table to display report :) 
+from prettytable.colortable import ColorTable, Themes
 
 class CoffeeMaker:
     """Models the machine that makes the coffee"""
@@ -12,7 +12,8 @@ class CoffeeMaker:
 
     def report(self):
         """Prints a report of all resources."""
-        table = PrettyTable()
+        # table = PrettyTable()
+        table = ColorTable(theme=Themes.OCEAN)
         table.add_column("Coffee resources", ["water", "milk", "coffee"])
         table.add_column("Qty", [str(self.resources['water']) +"ml", str(self.resources['milk']) +"ml", str(self.resources['coffee']) +"g"])
         table.align = 'l'
@@ -39,4 +40,5 @@ class CoffeeMaker:
             self.resources['water'] += 300
             self.resources['milk'] += 300
             self.resources['coffee'] += 30
-        print(f"Refilled resources finished! and here is your report ${self.report()}")
+        print(f"Refilled resources finished! and here is your report")
+        self.report()
