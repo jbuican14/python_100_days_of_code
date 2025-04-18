@@ -1,3 +1,4 @@
+# https://pypi.org/project/colorama/
 from prettytable import PrettyTable
 from prettytable.colortable import ColorTable, Themes
 
